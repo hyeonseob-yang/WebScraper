@@ -28,10 +28,10 @@ namespace WebScraper {
             this.rtb_debugDisplay = new System.Windows.Forms.RichTextBox();
             this.urlTextbox = new System.Windows.Forms.TextBox();
             this.classTextbox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.urlLabel = new System.Windows.Forms.Label();
+            this.classLabel = new System.Windows.Forms.Label();
             this.queryTextbox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.queryLabel = new System.Windows.Forms.Label();
             this.insertButton = new System.Windows.Forms.Button();
             this.pullButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
@@ -69,25 +69,25 @@ namespace WebScraper {
             this.classTextbox.Size = new System.Drawing.Size(246, 22);
             this.classTextbox.TabIndex = 3;
             // 
-            // label1
+            // urlLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "URL:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.urlLabel.AutoSize = true;
+            this.urlLabel.Location = new System.Drawing.Point(12, 12);
+            this.urlLabel.Name = "urlLabel";
+            this.urlLabel.Size = new System.Drawing.Size(40, 17);
+            this.urlLabel.TabIndex = 4;
+            this.urlLabel.Text = "URL:";
+            this.urlLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // classLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(395, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Element Classname:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.classLabel.AutoSize = true;
+            this.classLabel.Location = new System.Drawing.Point(395, 15);
+            this.classLabel.Name = "classLabel";
+            this.classLabel.Size = new System.Drawing.Size(136, 17);
+            this.classLabel.TabIndex = 5;
+            this.classLabel.Text = "Element Classname:";
+            this.classLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // queryTextbox
             // 
@@ -96,14 +96,14 @@ namespace WebScraper {
             this.queryTextbox.Size = new System.Drawing.Size(584, 22);
             this.queryTextbox.TabIndex = 6;
             // 
-            // label3
+            // queryLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 17);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Query Terms:";
+            this.queryLabel.AutoSize = true;
+            this.queryLabel.Location = new System.Drawing.Point(12, 43);
+            this.queryLabel.Name = "queryLabel";
+            this.queryLabel.Size = new System.Drawing.Size(95, 17);
+            this.queryLabel.TabIndex = 7;
+            this.queryLabel.Text = "Query Terms:";
             // 
             // insertButton
             // 
@@ -140,10 +140,10 @@ namespace WebScraper {
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.pullButton);
             this.Controls.Add(this.insertButton);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.queryLabel);
             this.Controls.Add(this.queryTextbox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.classLabel);
+            this.Controls.Add(this.urlLabel);
             this.Controls.Add(this.classTextbox);
             this.Controls.Add(this.urlTextbox);
             this.Controls.Add(this.rtb_debugDisplay);
@@ -161,10 +161,10 @@ namespace WebScraper {
         private System.Windows.Forms.RichTextBox rtb_debugDisplay;
         private System.Windows.Forms.TextBox urlTextbox;
         private System.Windows.Forms.TextBox classTextbox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label urlLabel;
+        private System.Windows.Forms.Label classLabel;
         private System.Windows.Forms.TextBox queryTextbox;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label queryLabel;
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.Button pullButton;
         private System.Windows.Forms.Button deleteButton;

@@ -60,6 +60,17 @@ namespace WebScraper {
 
         private void button1_Click(object sender, EventArgs e) {
             ScrapeWebsite();
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            connector.Read();
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            connector.Read();
+        }
+
+        private void button4_Click(object sender, EventArgs e) {
             connector.Read();
         }
 
