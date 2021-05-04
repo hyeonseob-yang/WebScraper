@@ -23,9 +23,9 @@ namespace WebScraper {
             
         }
 
-        public void Insert() {
+        public void Insert(string title, string url) {
             try {
-                string insertSql = "INSERT INTO articles (title, url) VALUES ('Fake Title', 'https://fakeurl.com')";
+                string insertSql = $"INSERT INTO articles (title, url) VALUES (\'{title}\', \'{url}\')";
                 MySqlCommand cmd = new MySqlCommand(insertSql, conn);
                 cmd.ExecuteNonQuery();
             }

@@ -27,7 +27,8 @@ namespace WebScraper {
         private string Url { get; set; }
         private string siteUrl = "https://www.oceannetworks.ca/news/stories";
         private string[] QueryTerms { get; } = { "Ocean", "Nature", "Pollution" };
-
+        private Connector connector = new Connector();
+        
         internal async void ScrapeWebsite() {
             CancellationTokenSource cancellationToken = new CancellationTokenSource();
             HttpClient httpClient = new HttpClient();
@@ -59,14 +60,14 @@ namespace WebScraper {
 
         private void button1_Click(object sender, EventArgs e) {
             ScrapeWebsite();
-            Connector connector = new Connector();
-            connector.Insert();
+            connector.Read();
         }
 
         public void PrintResults(IEnumerable<IElement> articleLink) {
             foreach (var element in articleLink) {
                 CleanUpResults(element);
                 rtb_debugDisplay.AppendText($"{Title} - {Url}{Environment.NewLine}");
+                connector.Insert(Title, Url);
             }
         }
 
