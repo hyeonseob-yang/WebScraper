@@ -45,7 +45,7 @@ namespace WebScraper {
             this.scrapeButton.TabIndex = 0;
             this.scrapeButton.Text = "Scrape";
             this.scrapeButton.UseVisualStyleBackColor = true;
-            this.scrapeButton.Click += new System.EventHandler(this.button1_Click);
+            this.scrapeButton.Click += new System.EventHandler(this.scrapeButton_Click);
             // 
             // rtb_debugDisplay
             // 
@@ -77,7 +77,6 @@ namespace WebScraper {
             this.urlLabel.Size = new System.Drawing.Size(40, 17);
             this.urlLabel.TabIndex = 4;
             this.urlLabel.Text = "URL:";
-            this.urlLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // classLabel
             // 
@@ -87,7 +86,6 @@ namespace WebScraper {
             this.classLabel.Size = new System.Drawing.Size(136, 17);
             this.classLabel.TabIndex = 5;
             this.classLabel.Text = "Element Classname:";
-            this.classLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // queryTextbox
             // 
@@ -113,6 +111,7 @@ namespace WebScraper {
             this.insertButton.TabIndex = 8;
             this.insertButton.Text = "Insert";
             this.insertButton.UseVisualStyleBackColor = true;
+            this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
             // 
             // pullButton
             // 
@@ -122,6 +121,7 @@ namespace WebScraper {
             this.pullButton.TabIndex = 9;
             this.pullButton.Text = "Pull";
             this.pullButton.UseVisualStyleBackColor = true;
+            this.pullButton.Click += new System.EventHandler(this.pullButton_Click);
             // 
             // deleteButton
             // 
@@ -131,6 +131,7 @@ namespace WebScraper {
             this.deleteButton.TabIndex = 10;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // MainWindow
             // 

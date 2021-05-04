@@ -58,19 +58,18 @@ namespace WebScraper {
             }
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void scrapeButton_Click(object sender, EventArgs e) {
             ScrapeWebsite();
         }
-
-        private void button2_Click(object sender, EventArgs e) {
+        private void insertButton_Click(object sender, EventArgs e) {
             connector.Read();
         }
 
-        private void button3_Click(object sender, EventArgs e) {
+        private void pullButton_Click(object sender, EventArgs e) {
             connector.Read();
         }
 
-        private void button4_Click(object sender, EventArgs e) {
+        private void deleteButton_Click(object sender, EventArgs e) {
             connector.Read();
         }
 
@@ -95,14 +94,6 @@ namespace WebScraper {
             string[] splitResults = htmlResult.Split('*');
             Url = splitResults[0];
             Title = splitResults[1];
-        }
-
-        private void label1_Click(object sender, EventArgs e) {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e) {
-
         }
     }
 }
