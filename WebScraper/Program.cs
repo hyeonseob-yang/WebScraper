@@ -11,8 +11,6 @@ namespace WebScraper {
         /// </summary>
         [STAThread]
         static void Main() {
-            Connector.Connect();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainWindow());

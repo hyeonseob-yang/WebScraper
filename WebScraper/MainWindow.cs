@@ -59,6 +59,8 @@ namespace WebScraper {
 
         private void button1_Click(object sender, EventArgs e) {
             ScrapeWebsite();
+            Connector connector = new Connector();
+            connector.Insert();
         }
 
         public void PrintResults(IEnumerable<IElement> articleLink) {

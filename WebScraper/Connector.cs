@@ -9,14 +9,34 @@ using MySql.Data.MySqlClient;
 
 namespace WebScraper {
     class Connector {
-        public static void Connect() {
-            string connStr = "server=localhost;user=root;database=world;port=3306;password=test";
-            MySqlConnection conn = new MySqlConnection(connStr);
+        private MySqlConnection conn { get; set; }
+
+        public Connector() {
+            string connStr = "server=localhost;user=root;database=web_scraper;port=3306;password=test";
+            conn = new MySqlConnection(connStr);
             try {
                 Console.WriteLine("Connecting to MySQL...");
                 conn.Open();
+            } catch (Exception ex) {
+                Console.WriteLine(ex.ToString());
+            }
+            
+        }
 
-                string readSql = "SELECT Name, HeadOfState FROM Country WHERE Continent = 'Oceania'";
+        public void Insert() {
+            try {
+                string insertSql = "INSERT INTO articles (title, url) VALUES ('Fake Title', 'https://fakeurl.com')";
+                MySqlCommand cmd = new MySqlCommand(insertSql, conn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public void Read() {
+            try {
+                string readSql = "SELECT * FROM articles";
                 MySqlCommand cmd = new MySqlCommand(readSql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -24,13 +44,13 @@ namespace WebScraper {
                     Console.WriteLine(rdr[0] + " -- " + rdr[1]);
                 }
                 rdr.Close();
-
-                string insertSql = "INSERT INTO Country (Name, HeadOfState, Continent) VALUES ('Disneyland', 'Mickey Mouse', 'North America')";
-                cmd = new MySqlCommand(insertSql, conn);
-                cmd.ExecuteNonQuery();
-            } catch (Exception ex) {
+            }
+            catch (Exception ex) {
                 Console.WriteLine(ex.ToString());
             }
+        }
+
+        public void Close() {
             conn.Close();
             Console.WriteLine("Done.");
         }
