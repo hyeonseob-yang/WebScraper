@@ -16,14 +16,18 @@ namespace WebScraper {
                 Console.WriteLine("Connecting to MySQL...");
                 conn.Open();
 
-                string sql = "SELECT Name, HeadOfState FROM Country WHERE Continent = 'Oceania'";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                string readSql = "SELECT Name, HeadOfState FROM Country WHERE Continent = 'Oceania'";
+                MySqlCommand cmd = new MySqlCommand(readSql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
                 while (rdr.Read()) {
                     Console.WriteLine(rdr[0] + " -- " + rdr[1]);
                 }
                 rdr.Close();
+
+                string insertSql = "INSERT INTO Country (Name, HeadOfState, Continent) VALUES ('Disneyland', 'Mickey Mouse', 'North America')";
+                cmd = new MySqlCommand(insertSql, conn);
+                cmd.ExecuteNonQuery();
             } catch (Exception ex) {
                 Console.WriteLine(ex.ToString());
             }
