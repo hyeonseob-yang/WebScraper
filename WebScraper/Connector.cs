@@ -25,6 +25,7 @@ namespace WebScraper {
 
         public void Insert(string title, string url) {
             try {
+                string formattedTitle = title.Replace("'", "\'");
                 string insertSql = $"INSERT INTO articles (title, url) VALUES (\'{title}\', \'{url}\')";
                 MySqlCommand cmd = new MySqlCommand(insertSql, conn);
                 cmd.ExecuteNonQuery();
