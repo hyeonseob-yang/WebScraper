@@ -21,7 +21,10 @@ namespace WebScraper {
             }
         }
         private void insertButton_Click(object sender, EventArgs e) {
-            connector.Read();
+            List<Entry> entries = scraper.entries;
+            foreach (var entry in entries) {
+                connector.Insert(entry.Title, entry.Url);
+            }
         }
 
         private void pullButton_Click(object sender, EventArgs e) {
