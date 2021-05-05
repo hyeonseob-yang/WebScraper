@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading;
+using System.Threading.Tasks;
 using AngleSharp.Dom;
 using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
@@ -16,7 +17,7 @@ namespace WebScraper {
         private string[] QueryTerms { get; } = { "Ocean", "Nature", "Pollution" };
         private readonly Connector connector = new Connector();
 
-        public async void ScrapeWebsite() {
+        public async Task ScrapeWebsite() {
             CancellationTokenSource cancellationToken = new CancellationTokenSource();
             HttpClient httpClient = new HttpClient();
             HttpResponseMessage request = await httpClient.GetAsync(siteUrl);

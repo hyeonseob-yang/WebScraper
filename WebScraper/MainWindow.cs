@@ -13,8 +13,8 @@ namespace WebScraper {
             InitializeComponent();
         }
 
-        private void scrapeButton_Click(object sender, EventArgs e) {
-            scraper.ScrapeWebsite();
+        private async void scrapeButton_Click(object sender, EventArgs e) {
+            await scraper.ScrapeWebsite();
             List<Entry> entries = scraper.entries;
             foreach (var entry in entries) {
                 rtb_debugDisplay.AppendText($"{entry.Title} - {entry.Url}{Environment.NewLine}");
