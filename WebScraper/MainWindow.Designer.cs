@@ -45,7 +45,7 @@ namespace WebScraper {
             this.scrapeButton.TabIndex = 0;
             this.scrapeButton.Text = "Scrape";
             this.scrapeButton.UseVisualStyleBackColor = true;
-            this.scrapeButton.Click += new System.EventHandler(this.scrapeButton_Click);
+            this.scrapeButton.Click += new System.EventHandler(this.ScrapeButton_Click);
             // 
             // rtb_debugDisplay
             // 
@@ -111,7 +111,7 @@ namespace WebScraper {
             this.insertButton.TabIndex = 8;
             this.insertButton.Text = "Insert";
             this.insertButton.UseVisualStyleBackColor = true;
-            this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
+            this.insertButton.Click += new System.EventHandler(this.InsertButton_Click);
             // 
             // pullButton
             // 
@@ -121,7 +121,7 @@ namespace WebScraper {
             this.pullButton.TabIndex = 9;
             this.pullButton.Text = "Pull";
             this.pullButton.UseVisualStyleBackColor = true;
-            this.pullButton.Click += new System.EventHandler(this.pullButton_Click);
+            this.pullButton.Click += new System.EventHandler(this.PullButton_Click);
             // 
             // deleteButton
             // 
@@ -131,7 +131,7 @@ namespace WebScraper {
             this.deleteButton.TabIndex = 10;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // MainWindow
             // 

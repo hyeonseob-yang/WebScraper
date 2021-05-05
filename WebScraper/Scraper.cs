@@ -13,9 +13,15 @@ using AngleSharp.Text;
 namespace WebScraper {
     class Scraper {
         public List<Entry> entries { get; } = new List<Entry>();
-        private string siteUrl = "https://www.oceannetworks.ca/news/stories";
+        private string siteUrl;
+        private string classname;
         private string[] QueryTerms { get; } = { "Ocean", "Nature", "Pollution" };
         private readonly Connector connector = new Connector();
+
+        public Scraper(string siteUrl, string classname) {
+            this.siteUrl = siteUrl;
+            this.classname = classname;
+        }
 
         public async Task ScrapeWebsite() {
             CancellationTokenSource cancellationToken = new CancellationTokenSource();
@@ -36,7 +42,7 @@ namespace WebScraper {
             IEnumerable<IElement> articleLink;
 
             foreach (var term in QueryTerms) {
-                articleLink = document.All.Where(x => x.ClassName == "views-field views-field-nothing"
+                articleLink = document.All.Where(x => x.ClassName == classname
                 && (x.ParentElement.InnerHtml.Contains(term)
                 || x.ParentElement.InnerHtml.Contains(term.ToLower()))).Skip(1);
 
