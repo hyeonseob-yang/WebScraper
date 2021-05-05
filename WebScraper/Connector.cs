@@ -12,7 +12,7 @@ namespace WebScraper {
         private MySqlConnection conn { get; set; }
 
         public Connector() {
-            string connStr = "server=localhost;user=root;database=web_scraper;port=3306;password=test";
+            string connStr = "server=webscraper.cgpuoirpqwcs.us-west-1.rds.amazonaws.com;user=masterUsername;database=WebScraper;port=3306;password=webscraper";
             conn = new MySqlConnection(connStr);
             try {
                 Console.WriteLine("Connecting to MySQL...");
