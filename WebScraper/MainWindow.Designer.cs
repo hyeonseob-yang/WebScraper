@@ -39,7 +39,7 @@ namespace WebScraper {
             // 
             // scrapeButton
             // 
-            this.scrapeButton.Location = new System.Drawing.Point(713, 41);
+            this.scrapeButton.Location = new System.Drawing.Point(713, 43);
             this.scrapeButton.Name = "scrapeButton";
             this.scrapeButton.Size = new System.Drawing.Size(75, 24);
             this.scrapeButton.TabIndex = 0;

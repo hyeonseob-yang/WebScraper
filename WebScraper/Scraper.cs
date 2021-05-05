@@ -11,17 +11,7 @@ using AngleSharp.Text;
 
 namespace WebScraper {
     class Scraper {
-        public struct Entry {
-            public Entry(string Url, string Title) {
-                this.Url = Url;
-                this.Title = Title;
-            }
-
-            public string Url { get; }
-            public string Title { get; }
-        }
-
-        private List<Entry> entries = new List<Entry>();
+        public List<Entry> entries { get; } = new List<Entry>();
         private string siteUrl = "https://www.oceannetworks.ca/news/stories";
         private string[] QueryTerms { get; } = { "Ocean", "Nature", "Pollution" };
         private readonly Connector connector = new Connector();
