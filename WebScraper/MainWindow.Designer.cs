@@ -26,7 +26,7 @@ namespace WebScraper {
         private void InitializeComponent() {
             this.scrapeButton = new System.Windows.Forms.Button();
             this.resultsBox = new System.Windows.Forms.RichTextBox();
-            this.urlTextbox = new System.Windows.Forms.TextBox();
+            this.siteUrlTextbox = new System.Windows.Forms.TextBox();
             this.classTextbox = new System.Windows.Forms.TextBox();
             this.urlLabel = new System.Windows.Forms.Label();
             this.classLabel = new System.Windows.Forms.Label();
@@ -35,6 +35,8 @@ namespace WebScraper {
             this.insertButton = new System.Windows.Forms.Button();
             this.pullButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.baseUrlTextbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // scrapeButton
@@ -56,18 +58,18 @@ namespace WebScraper {
             this.resultsBox.TabIndex = 1;
             this.resultsBox.Text = "";
             // 
-            // urlTextbox
+            // siteUrlTextbox
             // 
-            this.urlTextbox.Location = new System.Drawing.Point(55, 12);
-            this.urlTextbox.Name = "urlTextbox";
-            this.urlTextbox.Size = new System.Drawing.Size(334, 22);
-            this.urlTextbox.TabIndex = 2;
+            this.siteUrlTextbox.Location = new System.Drawing.Point(55, 12);
+            this.siteUrlTextbox.Name = "siteUrlTextbox";
+            this.siteUrlTextbox.Size = new System.Drawing.Size(334, 22);
+            this.siteUrlTextbox.TabIndex = 2;
             // 
             // classTextbox
             // 
             this.classTextbox.Location = new System.Drawing.Point(154, 44);
             this.classTextbox.Name = "classTextbox";
-            this.classTextbox.Size = new System.Drawing.Size(165, 22);
+            this.classTextbox.Size = new System.Drawing.Size(235, 22);
             this.classTextbox.TabIndex = 3;
             // 
             // urlLabel
@@ -90,19 +92,19 @@ namespace WebScraper {
             // 
             // keywordTextbox
             // 
-            this.keywordTextbox.Location = new System.Drawing.Point(423, 43);
+            this.keywordTextbox.Location = new System.Drawing.Point(482, 43);
             this.keywordTextbox.Name = "keywordTextbox";
-            this.keywordTextbox.Size = new System.Drawing.Size(280, 22);
+            this.keywordTextbox.Size = new System.Drawing.Size(221, 22);
             this.keywordTextbox.TabIndex = 6;
             // 
             // queryLabel
             // 
             this.queryLabel.AutoSize = true;
-            this.queryLabel.Location = new System.Drawing.Point(325, 44);
+            this.queryLabel.Location = new System.Drawing.Point(397, 46);
             this.queryLabel.Name = "queryLabel";
-            this.queryLabel.Size = new System.Drawing.Size(95, 17);
+            this.queryLabel.Size = new System.Drawing.Size(66, 17);
             this.queryLabel.TabIndex = 7;
-            this.queryLabel.Text = "Query Terms:";
+            this.queryLabel.Text = "Keyword:";
             // 
             // insertButton
             // 
@@ -134,11 +136,29 @@ namespace WebScraper {
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(397, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Base URL:";
+            // 
+            // baseUrlTextbox
+            // 
+            this.baseUrlTextbox.Location = new System.Drawing.Point(482, 13);
+            this.baseUrlTextbox.Name = "baseUrlTextbox";
+            this.baseUrlTextbox.Size = new System.Drawing.Size(305, 22);
+            this.baseUrlTextbox.TabIndex = 12;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.baseUrlTextbox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.pullButton);
             this.Controls.Add(this.insertButton);
@@ -147,7 +167,7 @@ namespace WebScraper {
             this.Controls.Add(this.classLabel);
             this.Controls.Add(this.urlLabel);
             this.Controls.Add(this.classTextbox);
-            this.Controls.Add(this.urlTextbox);
+            this.Controls.Add(this.siteUrlTextbox);
             this.Controls.Add(this.resultsBox);
             this.Controls.Add(this.scrapeButton);
             this.Name = "MainWindow";
@@ -161,7 +181,7 @@ namespace WebScraper {
 
         private System.Windows.Forms.Button scrapeButton;
         private System.Windows.Forms.RichTextBox resultsBox;
-        private System.Windows.Forms.TextBox urlTextbox;
+        private System.Windows.Forms.TextBox siteUrlTextbox;
         private System.Windows.Forms.TextBox classTextbox;
         private System.Windows.Forms.Label urlLabel;
         private System.Windows.Forms.Label classLabel;
@@ -170,6 +190,8 @@ namespace WebScraper {
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.Button pullButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox baseUrlTextbox;
     }
 }
 

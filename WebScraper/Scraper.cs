@@ -14,6 +14,7 @@ namespace WebScraper {
     class Scraper {
         public List<Entry> entries { get; } = new List<Entry>();
         private readonly string siteUrl;
+        private readonly string baseUrl;
         private readonly string classname;
         private readonly string keyword1;
 
@@ -21,8 +22,9 @@ namespace WebScraper {
             return keyword1;
         }
 
-        public Scraper(string siteUrl, string classname, string keyword) {
+        public Scraper(string siteUrl, string baseUrl, string classname, string keyword) {
             this.siteUrl = siteUrl;
+            this.baseUrl = baseUrl;
             this.classname = classname;
             this.keyword1 = keyword;
         }
@@ -62,7 +64,7 @@ namespace WebScraper {
         }
 
         private Entry CleanUpResults(IElement results) {
-            string htmlResult = results.InnerHtml.ReplaceFirst("    <span class=\"field-content\"><div><a href=\"", "https://www.oceannetworks.ca");
+            string htmlResult = results.InnerHtml.ReplaceFirst("    <span class=\"field-content\"><div><a href=\"", baseUrl);
             htmlResult = htmlResult.ReplaceFirst("\">", "*");
             htmlResult = htmlResult.ReplaceFirst("</a></div>\n<div class=\"article-title-top\">", "-");
             htmlResult = htmlResult.ReplaceFirst("</div>\n<hr></span> ", "");

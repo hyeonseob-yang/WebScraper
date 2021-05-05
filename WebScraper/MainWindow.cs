@@ -11,14 +11,17 @@ namespace WebScraper {
 
         public MainWindow() {
             InitializeComponent();
+            this.Text = "Web Scraper";
         }
 
         private async void ScrapeButton_Click(object sender, EventArgs e) {
             try {
-                string siteUrl = urlTextbox.Text;
+                string siteUrl = siteUrlTextbox.Text;
+                string baseUrl = baseUrlTextbox.Text;
                 string classname = classTextbox.Text;
                 string keyword = keywordTextbox.Text;
-                scraper = new Scraper(siteUrl, classname, keyword);
+                
+                scraper = new Scraper(siteUrl, baseUrl, classname, keyword);
                 await scraper.ScrapeWebsite();
                 resultsBox.Clear();
                 List<Entry> entries = scraper.entries;
