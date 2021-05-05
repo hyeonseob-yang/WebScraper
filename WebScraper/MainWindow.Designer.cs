@@ -39,9 +39,9 @@ namespace WebScraper {
             // 
             // scrapeButton
             // 
-            this.scrapeButton.Location = new System.Drawing.Point(704, 39);
+            this.scrapeButton.Location = new System.Drawing.Point(713, 41);
             this.scrapeButton.Name = "scrapeButton";
-            this.scrapeButton.Size = new System.Drawing.Size(75, 23);
+            this.scrapeButton.Size = new System.Drawing.Size(75, 24);
             this.scrapeButton.TabIndex = 0;
             this.scrapeButton.Text = "Scrape";
             this.scrapeButton.UseVisualStyleBackColor = true;
@@ -64,9 +64,9 @@ namespace WebScraper {
             // 
             // classTextbox
             // 
-            this.classTextbox.Location = new System.Drawing.Point(533, 11);
+            this.classTextbox.Location = new System.Drawing.Point(154, 44);
             this.classTextbox.Name = "classTextbox";
-            this.classTextbox.Size = new System.Drawing.Size(246, 22);
+            this.classTextbox.Size = new System.Drawing.Size(165, 22);
             this.classTextbox.TabIndex = 3;
             // 
             // urlLabel
@@ -81,7 +81,7 @@ namespace WebScraper {
             // classLabel
             // 
             this.classLabel.AutoSize = true;
-            this.classLabel.Location = new System.Drawing.Point(395, 15);
+            this.classLabel.Location = new System.Drawing.Point(12, 44);
             this.classLabel.Name = "classLabel";
             this.classLabel.Size = new System.Drawing.Size(136, 17);
             this.classLabel.TabIndex = 5;
@@ -89,15 +89,15 @@ namespace WebScraper {
             // 
             // queryTextbox
             // 
-            this.queryTextbox.Location = new System.Drawing.Point(109, 39);
+            this.queryTextbox.Location = new System.Drawing.Point(423, 43);
             this.queryTextbox.Name = "queryTextbox";
-            this.queryTextbox.Size = new System.Drawing.Size(584, 22);
+            this.queryTextbox.Size = new System.Drawing.Size(280, 22);
             this.queryTextbox.TabIndex = 6;
             // 
             // queryLabel
             // 
             this.queryLabel.AutoSize = true;
-            this.queryLabel.Location = new System.Drawing.Point(12, 43);
+            this.queryLabel.Location = new System.Drawing.Point(325, 44);
             this.queryLabel.Name = "queryLabel";
             this.queryLabel.Size = new System.Drawing.Size(95, 17);
             this.queryLabel.TabIndex = 7;
