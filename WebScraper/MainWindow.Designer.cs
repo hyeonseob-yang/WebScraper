@@ -51,6 +51,7 @@ namespace WebScraper {
             // 
             this.resultsBox.Location = new System.Drawing.Point(12, 77);
             this.resultsBox.Name = "resultsBox";
+            this.resultsBox.ReadOnly = true;
             this.resultsBox.Size = new System.Drawing.Size(776, 324);
             this.resultsBox.TabIndex = 1;
             this.resultsBox.Text = "";

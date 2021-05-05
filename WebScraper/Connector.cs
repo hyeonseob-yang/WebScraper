@@ -34,7 +34,7 @@ namespace WebScraper {
             }
         }
 
-        public List<Entry> Read() {
+        public List<Entry> GetEntries() {
             List<Entry> entries = new List<Entry>();
             try {
                 string readSql = "SELECT * FROM articles";

@@ -20,8 +20,8 @@ namespace WebScraper {
                 string keyword = keywordTextbox.Text;
                 scraper = new Scraper(siteUrl, classname, keyword);
                 await scraper.ScrapeWebsite();
-                List<Entry> entries = scraper.entries;
                 resultsBox.Clear();
+                List<Entry> entries = scraper.entries;
                 foreach (var entry in entries) {
                     resultsBox.AppendText($"{entry.Title} - {entry.Url}{Environment.NewLine}");
                 }
@@ -37,7 +37,8 @@ namespace WebScraper {
         }
 
         private void PullButton_Click(object sender, EventArgs e) {
-            List<Entry> entries = connector.Read();
+            resultsBox.Clear();
+            List<Entry> entries = connector.GetEntries();
             foreach (var entry in entries) {
                 resultsBox.AppendText($"{entry.Title} - {entry.Url}{Environment.NewLine}");
             }
