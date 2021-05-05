@@ -23,7 +23,9 @@ namespace WebScraper {
                 
                 scraper = new Scraper(siteUrl, baseUrl, classname, keyword);
                 await scraper.ScrapeWebsite();
+
                 resultsBox.Clear();
+
                 List<Entry> entries = scraper.entries;
                 foreach (var entry in entries) {
                     resultsBox.AppendText($"{entry.Title} - {entry.Url}{Environment.NewLine}");

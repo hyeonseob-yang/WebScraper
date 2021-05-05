@@ -49,7 +49,7 @@ namespace WebScraper {
 
             articleLink = document.All.Where(x => x.ClassName == classname
                 && (x.ParentElement.InnerHtml.Contains(Getkeyword())
-                || x.ParentElement.InnerHtml.Contains(Getkeyword().ToLower()))).Skip(1);
+                || x.ParentElement.InnerHtml.Contains(Getkeyword().ToLower())));
 
             if (articleLink.Any()) {
                 StoreResults(articleLink);
@@ -64,10 +64,15 @@ namespace WebScraper {
         }
 
         private Entry CleanUpResults(IElement results) {
-            string htmlResult = results.InnerHtml.ReplaceFirst("    <span class=\"field-content\"><div><a href=\"", baseUrl);
+            string htmlResult = results.InnerHtml;
+            string searchValue = "href=\"";
+            htmlResult = htmlResult.Substring(htmlResult.IndexOf(searchValue) + searchValue.Length);
+            htmlResult = htmlResult.Insert(0, baseUrl);
             htmlResult = htmlResult.ReplaceFirst("\">", "*");
-            htmlResult = htmlResult.ReplaceFirst("</a></div>\n<div class=\"article-title-top\">", "-");
-            htmlResult = htmlResult.ReplaceFirst("</div>\n<hr></span> ", "");
+            searchValue = "</a>";
+            if (htmlResult.IndexOf(searchValue) > 0) {
+                htmlResult = htmlResult.Substring(0, htmlResult.IndexOf(searchValue));
+            }
 
             return SplitResults(htmlResult);
         }
