@@ -27,11 +27,9 @@ namespace WebScraper {
             try {
                 string formattedTitle = title.Replace("'", "''");
                 string insertSql = $"INSERT INTO articles (title, url) VALUES ('{formattedTitle}', '{url}')";
-                Console.WriteLine(insertSql);
                 MySqlCommand cmd = new MySqlCommand(insertSql, conn);
                 cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex) {
+            } catch (Exception ex) {
                 Console.WriteLine(ex.ToString());
             }
         }
@@ -46,8 +44,17 @@ namespace WebScraper {
                     Console.WriteLine(rdr[0] + " -- " + rdr[1]);
                 }
                 rdr.Close();
+            } catch (Exception ex) {
+                Console.WriteLine(ex.ToString());
             }
-            catch (Exception ex) {
+        }
+
+        public void Delete() {
+            try {
+                string deleteSql = "DELETE FROM articles WHERE id > 1";
+                MySqlCommand cmd = new MySqlCommand(deleteSql, conn);
+                cmd.ExecuteNonQuery();
+            } catch (Exception ex) {
                 Console.WriteLine(ex.ToString());
             }
         }

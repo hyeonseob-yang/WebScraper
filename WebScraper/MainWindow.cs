@@ -70,7 +70,7 @@ namespace WebScraper {
         }
 
         private void deleteButton_Click(object sender, EventArgs e) {
-            connector.Read();
+            connector.Delete();
         }
 
         public void PrintResults(IEnumerable<IElement> articleLink) {
