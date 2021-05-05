@@ -17,7 +17,7 @@ C# project using AngleSharp and a MySQL server on AWS RDS.
 ##### Example #1:
 - URL: "https://www.oceannetworks.ca/news/stories"
 - Base URL: "https://www.oceannetworks.ca"
-- Element Classname: "views-find views-find-nothing"
+- Element Classname: "views-field views-field-nothing"
 - Keyword: "Ocean"
 
 ##### Example #2:
