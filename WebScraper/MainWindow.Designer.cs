@@ -25,12 +25,12 @@ namespace WebScraper {
         /// </summary>
         private void InitializeComponent() {
             this.scrapeButton = new System.Windows.Forms.Button();
-            this.rtb_debugDisplay = new System.Windows.Forms.RichTextBox();
+            this.resultsBox = new System.Windows.Forms.RichTextBox();
             this.urlTextbox = new System.Windows.Forms.TextBox();
             this.classTextbox = new System.Windows.Forms.TextBox();
             this.urlLabel = new System.Windows.Forms.Label();
             this.classLabel = new System.Windows.Forms.Label();
-            this.queryTextbox = new System.Windows.Forms.TextBox();
+            this.keywordTextbox = new System.Windows.Forms.TextBox();
             this.queryLabel = new System.Windows.Forms.Label();
             this.insertButton = new System.Windows.Forms.Button();
             this.pullButton = new System.Windows.Forms.Button();
@@ -47,13 +47,13 @@ namespace WebScraper {
             this.scrapeButton.UseVisualStyleBackColor = true;
             this.scrapeButton.Click += new System.EventHandler(this.ScrapeButton_Click);
             // 
-            // rtb_debugDisplay
+            // resultsBox
             // 
-            this.rtb_debugDisplay.Location = new System.Drawing.Point(12, 77);
-            this.rtb_debugDisplay.Name = "rtb_debugDisplay";
-            this.rtb_debugDisplay.Size = new System.Drawing.Size(776, 324);
-            this.rtb_debugDisplay.TabIndex = 1;
-            this.rtb_debugDisplay.Text = "";
+            this.resultsBox.Location = new System.Drawing.Point(12, 77);
+            this.resultsBox.Name = "resultsBox";
+            this.resultsBox.Size = new System.Drawing.Size(776, 324);
+            this.resultsBox.TabIndex = 1;
+            this.resultsBox.Text = "";
             // 
             // urlTextbox
             // 
@@ -87,12 +87,12 @@ namespace WebScraper {
             this.classLabel.TabIndex = 5;
             this.classLabel.Text = "Element Classname:";
             // 
-            // queryTextbox
+            // keywordTextbox
             // 
-            this.queryTextbox.Location = new System.Drawing.Point(423, 43);
-            this.queryTextbox.Name = "queryTextbox";
-            this.queryTextbox.Size = new System.Drawing.Size(280, 22);
-            this.queryTextbox.TabIndex = 6;
+            this.keywordTextbox.Location = new System.Drawing.Point(423, 43);
+            this.keywordTextbox.Name = "keywordTextbox";
+            this.keywordTextbox.Size = new System.Drawing.Size(280, 22);
+            this.keywordTextbox.TabIndex = 6;
             // 
             // queryLabel
             // 
@@ -142,12 +142,12 @@ namespace WebScraper {
             this.Controls.Add(this.pullButton);
             this.Controls.Add(this.insertButton);
             this.Controls.Add(this.queryLabel);
-            this.Controls.Add(this.queryTextbox);
+            this.Controls.Add(this.keywordTextbox);
             this.Controls.Add(this.classLabel);
             this.Controls.Add(this.urlLabel);
             this.Controls.Add(this.classTextbox);
             this.Controls.Add(this.urlTextbox);
-            this.Controls.Add(this.rtb_debugDisplay);
+            this.Controls.Add(this.resultsBox);
             this.Controls.Add(this.scrapeButton);
             this.Name = "MainWindow";
             this.Text = "Form1";
@@ -159,12 +159,12 @@ namespace WebScraper {
         #endregion
 
         private System.Windows.Forms.Button scrapeButton;
-        private System.Windows.Forms.RichTextBox rtb_debugDisplay;
+        private System.Windows.Forms.RichTextBox resultsBox;
         private System.Windows.Forms.TextBox urlTextbox;
         private System.Windows.Forms.TextBox classTextbox;
         private System.Windows.Forms.Label urlLabel;
         private System.Windows.Forms.Label classLabel;
-        private System.Windows.Forms.TextBox queryTextbox;
+        private System.Windows.Forms.TextBox keywordTextbox;
         private System.Windows.Forms.Label queryLabel;
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.Button pullButton;

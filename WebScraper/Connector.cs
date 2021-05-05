@@ -34,19 +34,24 @@ namespace WebScraper {
             }
         }
 
-        public void Read() {
+        public List<Entry> Read() {
+            List<Entry> entries = new List<Entry>();
             try {
                 string readSql = "SELECT * FROM articles";
                 MySqlCommand cmd = new MySqlCommand(readSql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
                 while (rdr.Read()) {
-                    Console.WriteLine(rdr[0] + " -- " + rdr[1]);
+                    string title = (string) rdr[1];
+                    string url = (string) rdr[2];
+                    Entry entry = new Entry(url, title);
+                    entries.Add(entry);
                 }
                 rdr.Close();
             } catch (Exception ex) {
                 Console.WriteLine(ex.ToString());
             }
+            return entries;
         }
 
         public void Delete() {

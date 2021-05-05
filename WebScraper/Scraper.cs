@@ -13,14 +13,18 @@ using AngleSharp.Text;
 namespace WebScraper {
     class Scraper {
         public List<Entry> entries { get; } = new List<Entry>();
-        private string siteUrl;
-        private string classname;
-        private string[] QueryTerms { get; } = { "Ocean", "Nature", "Pollution" };
-        private readonly Connector connector = new Connector();
+        private readonly string siteUrl;
+        private readonly string classname;
+        private readonly string keyword1;
 
-        public Scraper(string siteUrl, string classname) {
+        private string Getkeyword() {
+            return keyword1;
+        }
+
+        public Scraper(string siteUrl, string classname, string keyword) {
             this.siteUrl = siteUrl;
             this.classname = classname;
+            this.keyword1 = keyword;
         }
 
         public async Task ScrapeWebsite() {
@@ -41,14 +45,12 @@ namespace WebScraper {
         private void GetScrapeResults(IHtmlDocument document) {
             IEnumerable<IElement> articleLink;
 
-            foreach (var term in QueryTerms) {
-                articleLink = document.All.Where(x => x.ClassName == classname
-                && (x.ParentElement.InnerHtml.Contains(term)
-                || x.ParentElement.InnerHtml.Contains(term.ToLower()))).Skip(1);
+            articleLink = document.All.Where(x => x.ClassName == classname
+                && (x.ParentElement.InnerHtml.Contains(Getkeyword())
+                || x.ParentElement.InnerHtml.Contains(Getkeyword().ToLower()))).Skip(1);
 
-                if (articleLink.Any()) {
-                    StoreResults(articleLink);
-                }
+            if (articleLink.Any()) {
+                StoreResults(articleLink);
             }
         }
 

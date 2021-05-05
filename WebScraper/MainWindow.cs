@@ -17,11 +17,13 @@ namespace WebScraper {
             try {
                 string siteUrl = urlTextbox.Text;
                 string classname = classTextbox.Text;
-                scraper = new Scraper(siteUrl, classname);
+                string keyword = keywordTextbox.Text;
+                scraper = new Scraper(siteUrl, classname, keyword);
                 await scraper.ScrapeWebsite();
                 List<Entry> entries = scraper.entries;
+                resultsBox.Clear();
                 foreach (var entry in entries) {
-                    rtb_debugDisplay.AppendText($"{entry.Title} - {entry.Url}{Environment.NewLine}");
+                    resultsBox.AppendText($"{entry.Title} - {entry.Url}{Environment.NewLine}");
                 }
             } catch (Exception ex) {
                 Console.WriteLine(ex);
@@ -35,7 +37,10 @@ namespace WebScraper {
         }
 
         private void PullButton_Click(object sender, EventArgs e) {
-            connector.Read();
+            List<Entry> entries = connector.Read();
+            foreach (var entry in entries) {
+                resultsBox.AppendText($"{entry.Title} - {entry.Url}{Environment.NewLine}");
+            }
         }
 
         private void DeleteButton_Click(object sender, EventArgs e) {
